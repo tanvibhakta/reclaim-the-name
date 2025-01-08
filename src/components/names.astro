@@ -1,0 +1,32 @@
+---
+import messages from '../assets/messages.txt?raw';
+
+const names = messages.split('\n').filter(name => name.trim());
+---
+
+<div class="names-container">
+    {names.map((name) => (
+        <div class="name-card">
+            <p>{name}</p>
+        </div>
+    ))}
+</div>
+
+<style>
+
+    .names-container {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .name-card {
+        border-radius: 0.5rem;
+    }
+
+    .name-card p {
+        margin: 0;
+        font-size: xx-large;
+        color: #333;
+    }
+</style>
